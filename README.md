@@ -1,6 +1,8 @@
 # Avtoelon_Uz
 
 Dastur Avtoelon dasturini (UI) cloni
+
+
 ![Avtoelon1](https://user-images.githubusercontent.com/121254411/209445005-c715ba51-c92b-4663-a6bc-24444e4d3e13.png)
 
 
