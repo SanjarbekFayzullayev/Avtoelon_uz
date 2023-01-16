@@ -1,16 +1,12 @@
-# olixapp2
+# Avtoelon_Uz
 
-A new Flutter project.
+Dastur Avtoelon dasturini (UI) cloni
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+![Avtoelon1](https://user-images.githubusercontent.com/121254411/209445005-c715ba51-c92b-4663-a6bc-24444e4d3e13.png)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Avtoelon2](https://user-images.githubusercontent.com/121254411/209445963-f7bd57c5-b31a-4bd4-a232-9410fd1c1b07.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+![Avtoelon3](https://user-images.githubusercontent.com/121254411/209445968-fb816361-433c-4015-b428-9d6cd0face2e.png)
