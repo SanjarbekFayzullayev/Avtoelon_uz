@@ -5,7 +5,7 @@ import 'package:like_button/like_button.dart';
 class Delespage extends StatefulWidget {
   final Moduls moduls;
 
-  Delespage({Key? key, required this.moduls}) : super(key: key);
+  const Delespage({Key? key, required this.moduls}) : super(key: key);
 
   @override
   State<Delespage> createState() => _DelespageState();
@@ -14,6 +14,8 @@ class Delespage extends StatefulWidget {
 class _DelespageState extends State<Delespage> {
   @override
   Widget build(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    var size = mediaQueryData.size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -21,16 +23,15 @@ class _DelespageState extends State<Delespage> {
         iconTheme: const IconThemeData(color: Colors.black),
         title: Text(
           widget.moduls.name,
-          style: TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.black),
         ),
         actions: [
           const SizedBox(
             width: 22,
           ),
           IconButton(
-            onPressed: () {
-            },
-            icon: Icon(
+            onPressed: () {},
+            icon: const Icon(
               Icons.share,
               color: Colors.blue,
             ),
@@ -38,7 +39,7 @@ class _DelespageState extends State<Delespage> {
           const SizedBox(
             width: 22,
           ),
-          LikeButton(),
+          const LikeButton(),
           const SizedBox(
             width: 22,
           ),
@@ -47,23 +48,24 @@ class _DelespageState extends State<Delespage> {
       body: ListView(
         children: [
           Container(
-              margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+              margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: Image.asset(
                 widget.moduls.imageUrl,
                 fit: BoxFit.fitWidth,
                 height: 210,
               )),
-          SizedBox(
+          const SizedBox(
             height: 13,
           ),
           Row(
             children: [
               Text(
-                "  " + widget.moduls.many,
-                style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                "  ${widget.moduls.many}",
+                style:
+                    const TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
               ),
-              Text(
-                "  " + "y.e",
+              const Text(
+                "  " "y.e",
                 style: TextStyle(
                     fontSize: 19,
                     fontWeight: FontWeight.bold,
@@ -71,24 +73,24 @@ class _DelespageState extends State<Delespage> {
               ),
             ],
           ),
-          Text("   " + widget.moduls.name + " " + widget.moduls.dateAbout),
+          Text("   ${widget.moduls.name} ${widget.moduls.dateAbout}"),
           Card(
             shadowColor: Colors.grey,
             surfaceTintColor: Colors.lightBlueAccent,
             elevation: 2,
-            margin: EdgeInsets.fromLTRB(0, 12, 0, 0),
+            margin: const EdgeInsets.fromLTRB(0, 12, 0, 0),
             child: Column(
               children: [
                 Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 12,
                     ),
-                    Text(
+                    const Text(
                       "Shahar",
                       style: TextStyle(color: Colors.grey),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 136,
                     ),
                     Text(widget.moduls.ctiy),
@@ -99,14 +101,14 @@ class _DelespageState extends State<Delespage> {
                 ),
                 Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 12,
                     ),
-                    Text(
+                    const Text(
                       "Kozov",
                       style: TextStyle(color: Colors.grey),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 144,
                     ),
                     Text(widget.moduls.Kuzov),
@@ -117,14 +119,14 @@ class _DelespageState extends State<Delespage> {
                 ),
                 Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 12,
                     ),
-                    Text(
+                    const Text(
                       "Uzatish qutisi",
                       style: TextStyle(color: Colors.grey),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 96,
                     ),
                     Text(widget.moduls.sendRoom),
@@ -135,14 +137,14 @@ class _DelespageState extends State<Delespage> {
                 ),
                 Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 12,
                     ),
-                    Text(
+                    const Text(
                       "Rangi",
                       style: TextStyle(color: Colors.grey),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 144,
                     ),
                     Text(widget.moduls.about),
@@ -153,14 +155,14 @@ class _DelespageState extends State<Delespage> {
                 ),
                 Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 12,
                     ),
-                    Text(
+                    const Text(
                       "Uzatma",
                       style: TextStyle(color: Colors.grey),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 130,
                     ),
                     Text(widget.moduls.sendTo),
@@ -171,14 +173,14 @@ class _DelespageState extends State<Delespage> {
                 ),
                 Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 12,
                     ),
-                    Text(
+                    const Text(
                       "Kami bor",
                       style: TextStyle(color: Colors.grey),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 122,
                     ),
                     Text(widget.moduls.middlYes),
@@ -189,14 +191,14 @@ class _DelespageState extends State<Delespage> {
                 ),
                 Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 12,
                     ),
-                    Text(
+                    const Text(
                       "Divigatel",
                       style: TextStyle(color: Colors.grey),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 124,
                     ),
                     Text(widget.moduls.gazOrBenzin),
@@ -205,7 +207,7 @@ class _DelespageState extends State<Delespage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Card(
@@ -214,7 +216,7 @@ class _DelespageState extends State<Delespage> {
                 Container(
                   alignment: Alignment.centerLeft,
                   child: Column(
-                    children: [
+                    children: const [
                       Text(
                         "To'liq xarakteriska",
                         style: TextStyle(
@@ -223,7 +225,7 @@ class _DelespageState extends State<Delespage> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
                 Container(
@@ -236,37 +238,37 @@ class _DelespageState extends State<Delespage> {
         ],
       ),
       persistentFooterButtons: [
-        InkWell(
-          onTap: () {
-          },
-          child: Container(
-            alignment: Alignment.center,
-            width: 168,
-            height: 40,
-            color: Colors.blue,
-            child: Text(
-              "Yozish",
-              style: TextStyle(color: Colors.white),
+        Row(
+          children: [
+            InkWell(
+              onTap: () {},
+              child: Container(
+                alignment: Alignment.center,
+                width: size.width * 0.5,
+                height: 40,
+                color: Colors.blue,
+                child: const Text(
+                  "Yozish",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ),
-          ),
-        ),
-        InkWell(
-          onTap: () {
-          },
-          child: Container(
-            alignment: Alignment.center,
-            width: 168,
-            height: 40,
-            color: Colors.green,
-            child: Text(
-              "Qong'iroq qilish",
-              style: TextStyle(color: Colors.white),
+            InkWell(
+              onTap: () {},
+              child: Container(
+                alignment: Alignment.center,
+                width: (size.width * 0.9) * 0.5,
+                height: 40,
+                color: Colors.green,
+                child: const Text(
+                  "Qong'iroq qilish",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ),
-          ),
+          ],
         ),
       ],
     );
   }
-
-
 }

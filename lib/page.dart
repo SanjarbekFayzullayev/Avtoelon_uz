@@ -113,12 +113,14 @@ class page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    var size = mediaQueryData.size;
     return WillPopScope(
       onWillPop: () async {
         final value = await showDialog<bool>(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text(
+            title: const Text(
               "Avtoelon",
               style: TextStyle(
                   fontSize: 25.0, fontFamily: 'Avtoelon', color: Colors.blue),
@@ -146,155 +148,100 @@ class page extends StatelessWidget {
       },
       child: Scaffold(
         drawer: Drawer(
-          backgroundColor: Colors.blue,
-          child: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: 12,
-                    ),
-                    Icon(
-                      Icons.account_circle,
-                      color: Colors.white,
-                      size: 70,
-                    ),
-                  ],
-                ),
-                Text(
-                  "    USER",
-                  style: TextStyle(
-                      fontSize: 19,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.white),
-                ),
-                Text(
-                  "      Username@gmail.com",
-                  style: TextStyle(color: Colors.white),
-                ),
-                SizedBox(
-                  height: 18,
-                ),
-                Container(
-                  color: Colors.white,
-                  height: 442,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+          child: ListView(
+            children: [
+              DrawerHeader(
+                decoration: const BoxDecoration(color: Colors.blueAccent),
+                child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(
-                            Icons.inbox_rounded,
-                            size: 30,
-                            color: Colors.blue,
-                          ),
-                          Text(
-                            "Inbox",
-                            style: TextStyle(color: Colors.blue, fontSize: 28),
-                          ),
-                          SizedBox(
-                            width: 130,
-                          ),
-                          Chip(
-                            label: Text("12"),
-                            backgroundColor: Colors.lightBlueAccent,
-                          )
-                        ],
+                      SizedBox(
+                        width: size.width * 0.01,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(
-                            Icons.archive,
-                            size: 30,
-                            color: Colors.blue,
-                          ),
-                          Text(
-                            "Save",
-                            style: TextStyle(color: Colors.blue, fontSize: 28),
-                          ),
-                          SizedBox(
-                            width: 198,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(
-                            Icons.send,
-                            size: 30,
-                            color: Colors.blue,
-                          ),
-                          Text(
-                            "Send",
-                            style: TextStyle(color: Colors.blue, fontSize: 28),
-                          ),
-                          SizedBox(
-                            width: 198,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(
-                            Icons.newspaper,
-                            size: 30,
-                            color: Colors.blue,
-                          ),
-                          Text(
-                            "App News",
-                            style: TextStyle(color: Colors.blue, fontSize: 28),
-                          ),
-                          SizedBox(
-                            width: 130,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(
-                            Icons.settings,
-                            size: 30,
-                            color: Colors.blue,
-                          ),
-                          Text(
-                            "Settings",
-                            style: TextStyle(color: Colors.blue, fontSize: 28),
-                          ),
-                          SizedBox(
-                            width: 160,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(
-                            Icons.login_outlined,
-                            size: 30,
-                            color: Colors.blue,
-                          ),
-                          Text(
-                            "Login Outlined",
-                            style: TextStyle(color: Colors.blue, fontSize: 28),
-                          ),
-                          SizedBox(
-                            width: 80,
-                          ),
-                        ],
+                      Icon(
+                        Icons.account_circle,
+                        color: Colors.white,
+                        size: size.width * 0.2,
                       ),
                     ],
                   ),
-                ),
-              ],
-            ),
+                  Padding(
+                    padding: EdgeInsets.only(left: size.width * 0.02),
+                    child: Text(
+                      "USER",
+                      style: TextStyle(
+                          fontSize: size.width * 0.05,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.white),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: size.width * 0.02),
+                    child: const Text(
+                      "Username@gmail.com",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+
+
+                ],
+              ),),
+              ListTile(title:
+              Text(
+                "Inbox",
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: size.width * 0.08),
+              ),leading:Icon(
+                Icons.inbox_rounded,
+                size: size.width * 0.1,
+                color: Colors.blue,
+              ),),
+              ListTile(title: Text(
+                "Save",
+                style: TextStyle(color: Colors.blue, fontSize: size.width * 0.08),
+              ),leading: Icon(
+                Icons.archive,
+                size: size.width * 0.1,
+                color: Colors.blue,
+              ),),
+              ListTile(title:  Text(
+                "Send",
+                style: TextStyle(color: Colors.blue, fontSize:  size.width * 0.08),
+              ),leading:  Icon(
+                Icons.send,
+                size: size.width * 0.1,
+                color: Colors.blue,
+              ),),
+              ListTile(title:  Text(
+                "App News",
+                style: TextStyle(color: Colors.blue, fontSize: size.width * 0.08),
+              ),leading:  Icon(
+                Icons.newspaper,
+                size: size.width * 0.1,
+                color: Colors.blue,
+              ),),
+              ListTile(title:  Text(
+                "Settings",
+                style: TextStyle(color: Colors.blue, fontSize: size.width * 0.08),
+              ),leading: Icon(
+                Icons.settings,
+                size: size.width * 0.1,
+                color: Colors.blue,
+              ),),
+              ListTile(title:  Text(
+                "Login Outlined",
+                style: TextStyle(color: Colors.blue, fontSize: size.width * 0.08),
+              ),leading: Icon(
+                Icons.login_outlined,
+                size: size.width * 0.1,
+                color: Colors.blue,
+              ),),
+
+            ],
           ),
         ),
         appBar: AppBar(
@@ -316,7 +263,8 @@ class page extends StatelessWidget {
             ),
           ],
           title: const Text("Avtoelon"),
-          titleTextStyle: TextStyle(fontSize: 25.0, fontFamily: 'Avtoelon'),
+          titleTextStyle:
+              TextStyle(fontSize: size.height * 0.04, fontFamily: 'Avtoelon'),
           backgroundColor: Colors.blue,
         ),
         body: ListView(
@@ -336,6 +284,8 @@ class page extends StatelessWidget {
   }
 
   Widget myCard(Moduls moduls, BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    var size = mediaQueryData.size;
     return InkWell(
       onTap: () {
         Navigator.push(
@@ -353,12 +303,11 @@ class page extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              width: 180,
+              width: size.width * 0.4,
               margin: const EdgeInsets.all(2.0),
               color: Colors.black12,
               child: Image.asset(moduls.imageUrl),
             ),
-
             Padding(
               padding: const EdgeInsets.all(0.0),
               child: Column(
